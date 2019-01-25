@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Sprites/Joe/character_Torso.png" type="Texture" id=1]
+
+[node name="Joe" type="Node2D"]
+
+[node name="character_Torso" type="Sprite" parent="."]
+position = Vector2( 41.8676, 38.1452 )
+texture = ExtResource( 1 )
+
