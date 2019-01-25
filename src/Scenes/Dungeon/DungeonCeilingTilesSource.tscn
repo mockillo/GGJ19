@@ -1,0 +1,108 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Sprites/Dungeon/bricks_ceiling.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+
+[node name="Node" type="Node"]
+
+[node name="Ceiling0" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 128, 128 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling0/StaticBody2D"]
+scale = Vector2( 6.4, 6.4 )
+shape = SubResource( 1 )
+
+[node name="Ceiling1" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 0, 128, 128 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling1/StaticBody2D"]
+scale = Vector2( 6.4, 6.4 )
+shape = SubResource( 1 )
+
+[node name="Ceiling2" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 256, 0, 128, 128 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling2/StaticBody2D"]
+scale = Vector2( 6.4, 6.4 )
+shape = SubResource( 1 )
+
+[node name="Ceiling3" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 384, 0, 128, 128 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling3/StaticBody2D"]
+scale = Vector2( 6.4, 6.4 )
+shape = SubResource( 1 )
+
+[node name="Ceiling4" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 512, 0, 128, 128 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling4/StaticBody2D"]
+scale = Vector2( 6.4, 6.4 )
+shape = SubResource( 1 )
+
+[node name="Ceiling5" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 640, 0, 128, 128 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling5/StaticBody2D"]
+scale = Vector2( 6.4, 6.4 )
+shape = SubResource( 1 )
+
+[node name="Ceiling6" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 128, 128, 128 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling6/StaticBody2D"]
+scale = Vector2( 6.4, 6.4 )
+shape = SubResource( 1 )
+
+[node name="Ceiling7" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 128, 128, 128 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling7/StaticBody2D"]
+scale = Vector2( 6.4, 6.4 )
+shape = SubResource( 1 )
+
+[node name="Ceiling8" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 256, 128, 128, 128 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling8/StaticBody2D"]
+scale = Vector2( 6.4, 6.4 )
+shape = SubResource( 1 )
+
