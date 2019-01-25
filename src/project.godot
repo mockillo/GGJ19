@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="GGJ19"
-run/main_scene="res://Scenes/Dungeon/TileDemo.tscn"
+run/main_scene="res://Scenes/AlexCharacterTest.tscn"
 config/icon="res://icon.png"
 
 [rendering]
