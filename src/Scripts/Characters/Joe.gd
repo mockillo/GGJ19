@@ -13,6 +13,7 @@ func _ready():
 
 func _physics_process(delta):
 	move(delta)
+	attack()
 
 func move(delta):
 	velocity.y += delta * GRAVITY
@@ -34,10 +35,16 @@ func move(delta):
 			
 	else:
 		velocity.x = 0
-		$AnimationPlayer.play("Stop")
+		$MovementAnimations.play("Stop")
 		
-	if (abs(velocity.x) > 0 and not $AnimationPlayer.is_playing()):
-		$AnimationPlayer.play("Walk")
+	if (abs(velocity.x) > 0 and not $MovementAnimations.is_playing()):
+		$MovementAnimations.play("Walk")
 	
 	move_and_slide(velocity, Vector2(0,-1))
 	
+func attack():
+	if (Input.is_action_just_pressed("melee") and not $AttackAnimations.is_playing()):
+		$AttackAnimations.play("Punch")
+		
+	if (Input.is_action_just_pressed("throw") and not $AttackAnimations.is_playing()):
+			$AttackAnimations.play("Throw")		
