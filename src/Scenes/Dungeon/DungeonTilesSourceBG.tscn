@@ -4,56 +4,6 @@
 
 [node name="Node" type="Node"]
 
-[node name="ForeGround0" type="Sprite" parent="."]
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 128, 128 )
-
-[node name="ForeGround1" type="Sprite" parent="."]
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 128, 0, 128, 128 )
-
-[node name="ForeGround2" type="Sprite" parent="."]
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 256, 0, 128, 128 )
-
-[node name="ForeGround3" type="Sprite" parent="."]
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 384, 0, 128, 128 )
-
-[node name="ForeGround4" type="Sprite" parent="."]
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 512, 0, 128, 128 )
-
-[node name="ForeGround5" type="Sprite" parent="."]
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 640, 0, 128, 128 )
-
-[node name="ForeGround6" type="Sprite" parent="."]
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 0, 128, 128, 128 )
-
-[node name="ForeGround7" type="Sprite" parent="."]
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 128, 128, 128, 128 )
-
-[node name="ForeGround8" type="Sprite" parent="."]
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 256, 128, 128, 128 )
-
-[node name="ForeGround9" type="Sprite" parent="."]
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 256, 128, 128, 128 )
-
 [node name="BackGround0" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 region_enabled = true
