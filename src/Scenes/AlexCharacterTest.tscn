@@ -1,4 +1,24 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Characters/Joe.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Sprites/Joe/character_Head.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+extents = Vector2( 237.698, 10 )
 
 [node name="root" type="Node2D"]
+
+[node name="Joe" parent="." instance=ExtResource( 1 )]
+position = Vector2( 357.157, 78.5559 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 357.631, 385.833 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="character_Head" type="Sprite" parent="."]
+position = Vector2( 359.58, 508.645 )
+texture = ExtResource( 2 )
 
