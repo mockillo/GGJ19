@@ -1,8 +1,9 @@
 extends KinematicBody2D
 
-const GRAVITY = 200.0
+const GRAVITY = 100.0
 const GRAVITY_CAP = 600.0
-const WALK_SPEED = 200
+const JUMP_SPEED = 1200.0
+const WALK_SPEED = 200.0
 
 var is_flipped = false
 
@@ -16,7 +17,12 @@ func _physics_process(delta):
 	attack()
 
 func move(delta):
-	velocity.y += delta * GRAVITY
+	move_and_slide(velocity, Vector2(0,-1))
+	
+	if (Input.is_action_just_pressed("jump") and is_on_floor()):
+		velocity.y = -JUMP_SPEED
+	else:
+		velocity.y += GRAVITY
 	
 	if (velocity.y > GRAVITY_CAP):
 		velocity.y = GRAVITY_CAP
@@ -40,11 +46,9 @@ func move(delta):
 	if (abs(velocity.x) > 0 and not $MovementAnimations.is_playing()):
 		$MovementAnimations.play("Walk")
 	
-	move_and_slide(velocity, Vector2(0,-1))
-	
 func attack():
 	if (Input.is_action_just_pressed("melee") and not $AttackAnimations.is_playing()):
 		$AttackAnimations.play("Punch")
 		
 	if (Input.is_action_just_pressed("throw") and not $AttackAnimations.is_playing()):
-			$AttackAnimations.play("Throw")		
+			$AttackAnimations.play("Throw")
