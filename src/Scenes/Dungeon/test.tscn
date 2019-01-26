@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Dungeon/TileSets/DungeonTilesBG.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Dungeon/TileSets/DungeonFloorTiles.tres" type="TileSet" id=2]
@@ -6,9 +6,6 @@
 [ext_resource path="res://Assets/Sprites/Misc/desk.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/Misc/HomeSign.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Misc/Torch.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Sprites/Misc/shackle_Down.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Sprites/Misc/shackle_Hanging.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Sprites/Misc/shackle_WallMount.png" type="Texture" id=9]
 
 [node name="Node2D" type="Node2D"]
 
@@ -26,7 +23,7 @@ format = 1
 tile_data = PoolIntArray( 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0 )
 
 [node name="Joe" parent="." instance=ExtResource( 3 )]
-position = Vector2( 320, 150 )
+position = Vector2( 402.547, 452.182 )
 
 [node name="desk" type="Sprite" parent="."]
 position = Vector2( 780, 450 )
@@ -38,40 +35,4 @@ texture = ExtResource( 5 )
 
 [node name="Torch" parent="." instance=ExtResource( 6 )]
 position = Vector2( 475.839, -117.359 )
-
-[node name="shackle_Down" type="Sprite" parent="."]
-position = Vector2( 1080, 350 )
-texture = ExtResource( 7 )
-
-[node name="shackle_Down2" type="Sprite" parent="."]
-position = Vector2( 840, 350 )
-texture = ExtResource( 7 )
-
-[node name="shackle_Hanging" type="Sprite" parent="."]
-position = Vector2( 1080, 350 )
-texture = ExtResource( 8 )
-
-[node name="shackle_Hanging2" type="Sprite" parent="."]
-position = Vector2( 1000, 350 )
-texture = ExtResource( 8 )
-
-[node name="shackle_Hanging3" type="Sprite" parent="."]
-position = Vector2( 920, 350 )
-texture = ExtResource( 8 )
-
-[node name="shackle_WallMount" type="Sprite" parent="."]
-position = Vector2( 1080, 350 )
-texture = ExtResource( 9 )
-
-[node name="shackle_WallMount2" type="Sprite" parent="."]
-position = Vector2( 1000, 350 )
-texture = ExtResource( 9 )
-
-[node name="shackle_WallMount3" type="Sprite" parent="."]
-position = Vector2( 920, 350 )
-texture = ExtResource( 9 )
-
-[node name="shackle_WallMount4" type="Sprite" parent="."]
-position = Vector2( 840, 350 )
-texture = ExtResource( 9 )
 

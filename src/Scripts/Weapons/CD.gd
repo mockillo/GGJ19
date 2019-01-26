@@ -4,6 +4,7 @@ const SPEED = 2000.0
 var velocity = Vector2()
 
 var dir = 1
+var rot_factor = 10
 
 func set_dir(d):
 	dir = d
@@ -19,4 +20,7 @@ func _physics_process(delta):
 		velocity.x += 20.0
 		
 	velocity.y += 10.0
+	
+	rotation_degrees += rot_factor
+	
 	move_and_slide(velocity, Vector2(0, -1))

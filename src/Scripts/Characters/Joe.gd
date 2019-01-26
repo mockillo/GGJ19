@@ -9,6 +9,13 @@ var is_flipped = false
 
 var velocity = Vector2()
 
+var weapons = [
+	"res://Scenes/Weapons/Hammer.tscn",
+	"res://Scenes/Weapons/Pencil.tscn",
+	"res://Scenes/Weapons/Floppy.tscn",
+	"res://Scenes/Weapons/CD.tscn",
+	]
+
 func _physics_process(delta):
 	move(delta)
 	attack()
@@ -52,7 +59,10 @@ func attack():
 			$AttackAnimations.play("Throw")
 			
 func spawnRanged():
-	var weapon = load("res://Scenes/Weapons/CD.tscn").instance()
+	var weapon_index = rand_range(0, 3)
+	print(weapon_index)
+	print(weapons[weapon_index])
+	var weapon = load(weapons[weapon_index]).instance()
 	weapon.position = $"character_Torso/character_Upper Left Arm/character_Lower Left Arm".global_position
 	weapon.set_dir(-1 if is_flipped else 1)
 	get_parent().add_child(weapon)
