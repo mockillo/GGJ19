@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/desk.png-b0975df81f6b3f9f796e8a90875b86a0.stex"
+path="res://.import/shackle_WallMount.png-4285e616070cca7420938b831436bec5.stex"
 
 [deps]
 
-source_file="res://Assets/Sprites/Misc/desk.png"
-dest_files=[ "res://.import/desk.png-b0975df81f6b3f9f796e8a90875b86a0.stex" ]
+source_file="res://Assets/Sprites/Misc/shackle_WallMount.png"
+dest_files=[ "res://.import/shackle_WallMount.png-4285e616070cca7420938b831436bec5.stex" ]
 
 [params]
 
