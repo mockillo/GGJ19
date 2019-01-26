@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/Characters/Joe.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Joe/character_Hips.png" type="Texture" id=2]
@@ -16,7 +16,7 @@
 [sub_resource type="CapsuleShape2D" id=1]
 
 radius = 22.0
-height = 68.0
+height = 42.0
 
 [sub_resource type="Animation" id=2]
 
@@ -290,6 +290,10 @@ tracks/4/keys = {
 } ]
 }
 
+[sub_resource type="RayShape2D" id=6]
+
+length = 59.0
+
 [node name="Joe" type="KinematicBody2D"]
 position = Vector2( 2, 1 )
 z_index = 10
@@ -424,8 +428,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( -2, 2 )
+position = Vector2( -3, -11 )
 shape = SubResource( 1 )
 
 [node name="MovementAnimations" type="AnimationPlayer" parent="."]
@@ -442,4 +445,7 @@ anims/Throw = SubResource( 5 )
 current = true
 limit_left = -79
 editor_draw_limits = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource( 6 )
 

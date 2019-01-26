@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/Characters/MiddleManagement.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Enemies/middleManagement_Hips.png" type="Texture" id=2]
@@ -16,7 +16,7 @@
 [sub_resource type="CapsuleShape2D" id=1]
 
 radius = 22.0
-height = 68.0
+height = 48.0
 
 [sub_resource type="Animation" id=2]
 
@@ -279,6 +279,10 @@ tracks/3/keys = {
 [sub_resource type="ConvexPolygonShape2D" id=6]
 
 
+[sub_resource type="RayShape2D" id=7]
+
+length = 53.0
+
 [node name="MiddleManagement" type="KinematicBody2D"]
 position = Vector2( 73, -13 )
 script = ExtResource( 1 )
@@ -409,8 +413,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( -2, 2 )
+position = Vector2( -3, -7 )
 shape = SubResource( 1 )
 
 [node name="MovementAnimations" type="AnimationPlayer" parent="."]
@@ -426,10 +429,15 @@ anims/Throw = SubResource( 5 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2( 150, 0 )
 rotation = -1.5708
 scale = Vector2( 30, 30 )
 shape = SubResource( 6 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 5 )
+shape = SubResource( 7 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

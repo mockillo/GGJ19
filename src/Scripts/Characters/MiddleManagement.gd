@@ -1,13 +1,4 @@
-extends KinematicBody2D
-
-const GRAVITY = 100.0
-const GRAVITY_CAP = 600.0
-const JUMP_SPEED = 1200.0
-const WALK_SPEED = 200.0
-
-var is_flipped = false
-
-var velocity = Vector2()
+extends "res://Scripts/Characters/BaseCharacter.gd"
 
 var joe
 
@@ -15,10 +6,6 @@ var init_pos
 
 func _ready():
 	init_pos = self.position.x
-
-func _physics_process(delta):
-	move(delta)
-	attack()
 
 func move(delta):
 	move_and_slide(velocity, Vector2(0,-1))
@@ -46,7 +33,7 @@ func move(delta):
 				apply_scale(Vector2(-1, 1))
 				is_flipped = false
 
-	if (Input.is_action_just_pressed("jump") and is_on_floor()):
+	if (is_on_floor()):
 		velocity.y = 0
 	else:
 		velocity.y += GRAVITY
@@ -58,11 +45,8 @@ func move(delta):
 		$MovementAnimations.play("Walk")
 
 func attack():
-	if (Input.is_action_just_pressed("melee") and not $AttackAnimations.is_playing()):
+	if (joe and not $AttackAnimations.is_playing() and abs(joe.position.x-position.x)<100):
 		$AttackAnimations.play("Punch")
-
-	if (Input.is_action_just_pressed("throw") and not $AttackAnimations.is_playing()):
-			$AttackAnimations.play("Throw")
 
 func _on_Area2D_body_entered(body):
 	if body.get_name()=="Joe":
