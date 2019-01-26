@@ -178,7 +178,7 @@ points = PoolVector2Array( 60, -60, 60, 60, -60, 60 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "shape": SubResource( 2 ),
-"shape_transform": Transform2D( -4.37114e-008, 1, -1, -4.37114e-008, 60, 68 )
+"shape_transform": Transform2D( -4.37114e-08, 1, -1, -4.37114e-08, 60, 68 )
 } ]
 10/z_index = 0
 
