@@ -13,9 +13,21 @@ _global_script_classes=[ {
 "class": "BaseCharacter",
 "language": "GDScript",
 "path": "res://Scripts/Characters/BaseCharacter.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Joe",
+"language": "GDScript",
+"path": "res://Scripts/Characters/Joe.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "MiddleManagement",
+"language": "GDScript",
+"path": "res://Scripts/Characters/MiddleManagement.gd"
 } ]
 _global_script_class_icons={
-"BaseCharacter": ""
+"BaseCharacter": "",
+"Joe": "",
+"MiddleManagement": ""
 }
 
 [application]
