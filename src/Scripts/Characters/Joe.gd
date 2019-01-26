@@ -9,9 +9,6 @@ var is_flipped = false
 
 var velocity = Vector2()
 
-func _ready():
-	pass # Replace with function body.
-
 func _physics_process(delta):
 	move(delta)
 	attack()
@@ -53,3 +50,9 @@ func attack():
 		
 	if (Input.is_action_just_pressed("throw") and not $AttackAnimations.is_playing()):
 			$AttackAnimations.play("Throw")
+			
+func spawnRanged():
+	var weapon = load("res://Scenes/Weapons/CD.tscn").instance()
+	weapon.position = $"character_Torso/character_Upper Left Arm/character_Lower Left Arm".global_position
+	weapon.set_dir(-1 if is_flipped else 1)
+	get_parent().add_child(weapon)
