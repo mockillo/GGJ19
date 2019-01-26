@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/StruggleForHome.wav-85f0c1bd95aa6a4dcc9502d3e45591e0.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/StruggleForHome.wav"
+dest_files=[ "res://.import/StruggleForHome.wav-85f0c1bd95aa6a4dcc9502d3e45591e0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
