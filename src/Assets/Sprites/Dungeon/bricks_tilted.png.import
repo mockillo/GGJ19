@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bricks_ceiling.png-633f9548cb5b23479f8d3eebb7110c2a.stex"
+path="res://.import/bricks_tilted.png-de2a78471c4d41b7f3887034809fff70.stex"
 
 [deps]
 
-source_file="res://Assets/Sprites/Dungeon/bricks_ceiling.png"
-dest_files=[ "res://.import/bricks_ceiling.png-633f9548cb5b23479f8d3eebb7110c2a.stex" ]
+source_file="res://Assets/Sprites/Dungeon/bricks_tilted.png"
+dest_files=[ "res://.import/bricks_tilted.png-de2a78471c4d41b7f3887034809fff70.stex" ]
 
 [params]
 
@@ -17,7 +17,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Sprites/Dungeon/bricks_floor.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/Dungeon/bricks_tilted.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -105,4 +106,27 @@ region_rect = Rect2( 256, 128, 128, 128 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor8/StaticBody2D"]
 scale = Vector2( 6.4, 6.4 )
 shape = SubResource( 1 )
+
+[node name="FloorTiltedUpRight" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 128, 128 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FloorTiltedUpRight"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FloorTiltedUpRight/StaticBody2D"]
+position = Vector2( 4, 4 )
+polygon = PoolVector2Array( 60, -60, 60, 60, -60, 60 )
+
+[node name="FloorTiltedDownRight" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 0, 128, 128 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FloorTiltedDownRight"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FloorTiltedDownRight/StaticBody2D"]
+position = Vector2( -4, 4 )
+rotation = 1.5708
+polygon = PoolVector2Array( 60, -60, 60, 60, -60, 60 )
 

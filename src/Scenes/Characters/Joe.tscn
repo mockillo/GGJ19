@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/Characters/Joe.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Joe/character_Hips.png" type="Texture" id=2]
@@ -16,11 +16,14 @@
 [sub_resource type="CapsuleShape2D" id=1]
 
 radius = 22.0
-height = 68.0
+height = 22.6667
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="RayShape2D" id=2]
 
-resource_name = "Stop"
+length = 26.25
+
+[sub_resource type="Animation" id=3]
+
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("character_Hips/character_Upper Left Leg/character_Lower Left Leg:position")
@@ -119,9 +122,8 @@ tracks/7/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
-resource_name = "Walk"
 tracks/0/type = "value"
 tracks/0/path = NodePath("character_Hips/character_Upper Left Leg/character_Lower Left Leg:rotation_degrees")
 tracks/0/interp = 1
@@ -171,9 +173,8 @@ tracks/3/keys = {
 "values": [ 16.4891, -0.491812, -65.7723, -72.8973, -31.9418, -20.6216, -9.46232, -9.46232, 25.5297, 28.0211 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 
-resource_name = "Punch"
 length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("character_Torso/character_Upper Left Arm/character_Lower Left Arm:rotation_degrees")
@@ -224,9 +225,8 @@ tracks/3/keys = {
 "values": [ Vector2( 12, -19 ), Vector2( 12, -19 ), Vector2( 12, -19 ), Vector2( 12, -19 ), Vector2( 12, -19 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 
-resource_name = "Throw"
 tracks/0/type = "value"
 tracks/0/path = NodePath("character_Torso/character_Upper Right Arm/character_Lower Right Arm:position")
 tracks/0/interp = 1
@@ -406,17 +406,21 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( -2, 2 )
+position = Vector2( -3, -17 )
+scale = Vector2( 1, 1.2 )
 shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+scale = Vector2( 1, 2.2 )
+shape = SubResource( 2 )
 
 [node name="MovementAnimations" type="AnimationPlayer" parent="."]
 playback_speed = 2.0
-anims/Stop = SubResource( 2 )
-anims/Walk = SubResource( 3 )
+anims/Stop = SubResource( 3 )
+anims/Walk = SubResource( 4 )
 
 [node name="AttackAnimations" type="AnimationPlayer" parent="."]
 playback_speed = 2.0
-anims/Punch = SubResource( 4 )
-anims/Throw = SubResource( 5 )
+anims/Punch = SubResource( 5 )
+anims/Throw = SubResource( 6 )
 
