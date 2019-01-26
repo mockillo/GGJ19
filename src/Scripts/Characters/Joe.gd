@@ -1,5 +1,5 @@
 extends "res://Scripts/Characters/BaseCharacter.gd"
-
+class_name Joe
 
 var weapons = [
 	"res://Scenes/Weapons/Hammer.tscn",
@@ -56,3 +56,4 @@ func spawnRanged():
 	weapon.position.y -= 70.0
 	weapon.set_dir(-1 if is_flipped else 1)
 	get_parent().add_child(weapon)
+

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/Characters/Joe.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Joe/character_Hips.png" type="Texture" id=2]
@@ -12,6 +12,10 @@
 [ext_resource path="res://Assets/Sprites/Joe/character_Upper Left Arm.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Sprites/Joe/character_Lower Left Arm.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Sprites/Joe/character_Head.png" type="Texture" id=12]
+
+[sub_resource type="RectangleShape2D" id=7]
+
+extents = Vector2( 13, 10 )
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -359,7 +363,6 @@ __meta__ = {
 }
 
 [node name="character_Torso" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( -1, -2 )
 texture = ExtResource( 7 )
 
@@ -415,6 +418,13 @@ __meta__ = {
 "_edit_bone_": true
 }
 
+[node name="Area2D" type="Area2D" parent="character_Torso/character_Upper Left Arm/character_Lower Left Arm"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="character_Torso/character_Upper Left Arm/character_Lower Left Arm/Area2D"]
+position = Vector2( 0, 14 )
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 7 )
+
 [node name="character_Head" type="Sprite" parent="character_Torso"]
 position = Vector2( -2, -24 )
 z_index = 1
@@ -451,3 +461,4 @@ editor_draw_limits = true
 visible = false
 shape = SubResource( 6 )
 
+[connection signal="body_entered" from="character_Torso/character_Upper Left Arm/character_Lower Left Arm/Area2D" to="." method="melee_hit"]

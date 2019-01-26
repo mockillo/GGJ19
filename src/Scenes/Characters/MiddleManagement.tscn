@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scripts/Characters/MiddleManagement.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Enemies/middleManagement_Hips.png" type="Texture" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://Assets/Sprites/Enemies/middleManagement_Upper Left Arm.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Sprites/Enemies/middleManagement_Lower Left Arm.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Sprites/Enemies/middleManagement_Head.png" type="Texture" id=12]
+
+[sub_resource type="RectangleShape2D" id=8]
+
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -400,6 +403,13 @@ __meta__ = {
 "_edit_bone_": true
 }
 
+[node name="Area2D" type="Area2D" parent="character_Torso/character_Upper Left Arm/character_Lower Left Arm"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="character_Torso/character_Upper Left Arm/character_Lower Left Arm/Area2D"]
+position = Vector2( 0, 14 )
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 8 )
+
 [node name="character_Head" type="Sprite" parent="character_Torso"]
 position = Vector2( -2, -24 )
 z_index = 1
@@ -441,5 +451,6 @@ visible = false
 position = Vector2( 0, 5 )
 shape = SubResource( 7 )
 
+[connection signal="body_entered" from="character_Torso/character_Upper Left Arm/character_Lower Left Arm/Area2D" to="." method="melee_hit"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
