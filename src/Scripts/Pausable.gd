@@ -15,6 +15,7 @@ func _process(delta):
 		menu.set_paused(true)
 		
 		get_tree().paused = true
+		menu.find_node("Camera2D").make_current()
 		current_scene.add_child(menu)
 
 func unpause():
