@@ -18,8 +18,8 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 
-radius = 22.0
-height = 48.0
+radius = 40.0
+height = 0.0
 
 [sub_resource type="Animation" id=2]
 
@@ -423,8 +423,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( -3, -7 )
+position = Vector2( -3, -14 )
 shape = SubResource( 1 )
 
 [node name="MovementAnimations" type="AnimationPlayer" parent="."]

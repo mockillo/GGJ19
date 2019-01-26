@@ -1,4 +1,5 @@
-extends "res://Scripts/Characters/BaseCharacter.gd"
+extends BaseCharacter
+class_name MiddleManagement
 
 var joe
 

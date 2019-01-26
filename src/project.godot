@@ -14,14 +14,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Characters/BaseCharacter.gd"
 }, {
-"base": "",
+"base": "KinematicBody2D",
 "class": "Joe",
 "language": "GDScript",
 "path": "res://Scripts/Characters/Joe.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "MiddleManagement",
+"language": "GDScript",
+"path": "res://Scripts/Characters/MiddleManagement.gd"
 } ]
 _global_script_class_icons={
 "BaseCharacter": "",
-"Joe": ""
+"Joe": "",
+"MiddleManagement": ""
 }
 
 [application]

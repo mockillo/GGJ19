@@ -1,4 +1,4 @@
-extends "res://Scripts/Characters/BaseCharacter.gd"
+extends BaseCharacter
 class_name Joe
 
 var weapons = [

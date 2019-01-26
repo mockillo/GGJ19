@@ -30,7 +30,10 @@ func take_damage(amount):
 	health -= amount
 	if health<1:
 		print ("YOU ARE DEAD, "+self.name)
-		get_tree().get_current_scene().remove_child(self)
+		if self.get_name() == "Joe":
+			get_tree().change_scene("res://Scenes/MainMenu.tscn")
+		else:
+			get_tree().get_current_scene().remove_child(self)
 		
 
 func melee_hit(body:BaseCharacter):
