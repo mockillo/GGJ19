@@ -1,13 +1,5 @@
-extends KinematicBody2D
-
-const GRAVITY = 100.0
-const GRAVITY_CAP = 600.0
-const JUMP_SPEED = 1200.0
-const WALK_SPEED = 200.0
-
-var is_flipped = false
-
-var velocity = Vector2()
+extends BaseCharacter
+class_name Joe
 
 var weapons = [
 	"res://Scenes/Weapons/Hammer.tscn",
@@ -16,9 +8,7 @@ var weapons = [
 	"res://Scenes/Weapons/CD.tscn",
 	]
 
-func _physics_process(delta):
-	move(delta)
-	attack()
+
 
 #warning-ignore:unused_argument
 func move(delta):
@@ -66,3 +56,4 @@ func spawnRanged():
 	weapon.position.y -= 70.0
 	weapon.set_dir(-1 if is_flipped else 1)
 	get_parent().add_child(weapon)
+
