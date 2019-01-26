@@ -17,9 +17,10 @@ _global_script_class_icons={
 
 config/name="Fight the Hordes of Monday, get home!"
 run/main_scene="res://Scenes/AlexCharacterTest.tscn"
+boot_splash/image="res://splash.png"
 boot_splash/fullsize=false
-boot_splash/bg_color=Color( 0, 0, 0, 1 )
-config/icon="res://Assets/Sprites/Joe/character_Head.png"
+boot_splash/bg_color=Color( 1, 1, 1, 1 )
+config/icon="res://icon.png"
 
 [autoload]
 
