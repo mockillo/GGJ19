@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/chair.png-c245b5f4d57880ab4801434dfc6a8977.stex"
+path="res://.import/desk.png-b0975df81f6b3f9f796e8a90875b86a0.stex"
 
 [deps]
 
-source_file="res://Assets/Sprites/Dungeon/chair.png"
-dest_files=[ "res://.import/chair.png-c245b5f4d57880ab4801434dfc6a8977.stex" ]
+source_file="res://Assets/Sprites/Misc/desk.png"
+dest_files=[ "res://.import/desk.png-b0975df81f6b3f9f796e8a90875b86a0.stex" ]
 
 [params]
 
@@ -17,7 +17,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
