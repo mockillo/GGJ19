@@ -13,18 +13,17 @@
 [ext_resource path="res://Assets/Sprites/Joe/character_Lower Left Arm.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Sprites/Joe/character_Head.png" type="Texture" id=12]
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=1]
 
 extents = Vector2( 13, 10 )
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=2]
 
 radius = 22.0
 height = 42.0
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
-resource_name = "Stop"
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("character_Hips/character_Upper Left Leg/character_Lower Left Leg:position")
@@ -123,9 +122,8 @@ tracks/7/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
-resource_name = "Walk"
 tracks/0/type = "value"
 tracks/0/path = NodePath("character_Hips/character_Upper Left Leg/character_Lower Left Leg:rotation_degrees")
 tracks/0/interp = 1
@@ -175,9 +173,8 @@ tracks/3/keys = {
 "values": [ 16.4891, -0.491812, -65.7723, -72.8973, -31.9418, -20.6216, -9.46232, -9.46232, 25.5297, 28.0211 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 
-resource_name = "Punch"
 length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("character_Torso/character_Upper Left Arm/character_Lower Left Arm:rotation_degrees")
@@ -228,9 +225,8 @@ tracks/3/keys = {
 "values": [ Vector2( 12, -19 ), Vector2( 12, -19 ), Vector2( 12, -19 ), Vector2( 12, -19 ), Vector2( 12, -19 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 
-resource_name = "Throw"
 tracks/0/type = "value"
 tracks/0/path = NodePath("character_Torso/character_Upper Right Arm/character_Lower Right Arm:position")
 tracks/0/interp = 1
@@ -294,7 +290,7 @@ tracks/4/keys = {
 } ]
 }
 
-[sub_resource type="RayShape2D" id=6]
+[sub_resource type="RayShape2D" id=7]
 
 length = 59.0
 
@@ -423,7 +419,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="character_Torso/character_Upper Left Arm/character_Lower Left Arm/Area2D"]
 position = Vector2( 0, 14 )
 scale = Vector2( 0.5, 0.5 )
-shape = SubResource( 7 )
+shape = SubResource( 1 )
 
 [node name="character_Head" type="Sprite" parent="character_Torso"]
 position = Vector2( -2, -24 )
@@ -440,25 +436,26 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( -3, -11 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="MovementAnimations" type="AnimationPlayer" parent="."]
 playback_speed = 2.0
-anims/Stop = SubResource( 2 )
-anims/Walk = SubResource( 3 )
+anims/Stop = SubResource( 3 )
+anims/Walk = SubResource( 4 )
 
 [node name="AttackAnimations" type="AnimationPlayer" parent="."]
 playback_speed = 2.0
-anims/Punch = SubResource( 4 )
-anims/Throw = SubResource( 5 )
+anims/Punch = SubResource( 5 )
+anims/Throw = SubResource( 6 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 limit_left = -79
+limit_right = 8150
 editor_draw_limits = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 visible = false
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [connection signal="body_entered" from="character_Torso/character_Upper Left Arm/character_Lower Left Arm/Area2D" to="." method="melee_hit"]

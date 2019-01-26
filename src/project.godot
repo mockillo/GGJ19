@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Fight the Hordes of Monday, get home!"
-run/main_scene="res://Scenes/Levels/Level1.tscn"
+run/main_scene="res://Scenes/MainMenu.tscn"
 boot_splash/image="res://splash.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
