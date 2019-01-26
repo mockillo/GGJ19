@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="GGJ19"
+config/name="Fight the Hordes of Monday, get home!"
 run/main_scene="res://Scenes/AlexCharacterTest.tscn"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
