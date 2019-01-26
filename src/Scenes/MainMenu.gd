@@ -10,7 +10,7 @@ func set_paused(p: bool):
 
 func play():
 	if (not paused):
-		get_tree().change_scene("res://Scenes/Dungeon/test.tscn")
+		get_tree().change_scene("res://Scenes/Levels/Level1.tscn")
 	
 func quit():
 	get_tree().quit()
