@@ -16,6 +16,7 @@ func _physics_process(delta):
 	move(delta)
 	attack()
 
+#warning-ignore:unused_argument
 func move(delta):
 	move_and_slide(velocity, Vector2(0,-1))
 	
