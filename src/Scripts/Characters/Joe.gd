@@ -59,10 +59,10 @@ func attack():
 			$AttackAnimations.play("Throw")
 			
 func spawnRanged():
-	var weapon_index = rand_range(0, 3)
-	print(weapon_index)
-	print(weapons[weapon_index])
+	var weapon_index = rand_range(0, 4)
 	var weapon = load(weapons[weapon_index]).instance()
+	#var weapon = load("res://Scenes/Weapons/CD.tscn").instance()
 	weapon.position = $"character_Torso/character_Upper Left Arm/character_Lower Left Arm".global_position
+	weapon.position.y -= 70.0
 	weapon.set_dir(-1 if is_flipped else 1)
 	get_parent().add_child(weapon)

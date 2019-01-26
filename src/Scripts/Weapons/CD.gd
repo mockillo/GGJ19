@@ -1,26 +1,17 @@
-extends KinematicBody2D
-
-const SPEED = 2000.0
-var velocity = Vector2()
+extends RigidBody2D
 
 var dir = 1
 var rot_factor = 10
 
+var fired = false
+
 func set_dir(d):
 	dir = d
 
-func _ready():
-	velocity.y = -300.0
-	velocity.x = dir * SPEED
-
 func _physics_process(delta):
-	if (velocity.x > 0):
-		 velocity.x -= 20.0
-	else:
-		velocity.x += 20.0
-		
-	velocity.y += 10.0
+	if (not fired):
+		apply_impulse(Vector2(0,0), Vector2(1000 * dir, -400))
+		fired = true
 	
-	rotation_degrees += rot_factor
-	
-	move_and_slide(velocity, Vector2(0, -1))
+func disableRot():
+	rot_factor = 0
