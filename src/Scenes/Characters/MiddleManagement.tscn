@@ -1,6 +1,6 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://Scripts/Characters/Joe.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Characters/MiddleManagement.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Enemies/middleManagement_Hips.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/Enemies/middleManagement_Upper Right Leg.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/Enemies/middleManagement_Lower Right Leg.png" type="Texture" id=4]
@@ -276,6 +276,9 @@ tracks/3/keys = {
 "values": [ 0.0, 13.4834, 0.0, 0.0 ]
 }
 
+[sub_resource type="ConvexPolygonShape2D" id=6]
+
+
 [node name="MiddleManagement" type="KinematicBody2D"]
 position = Vector2( 73, -13 )
 script = ExtResource( 1 )
@@ -420,3 +423,13 @@ playback_speed = 2.0
 anims/Punch = SubResource( 4 )
 anims/Throw = SubResource( 5 )
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 192, -45 )
+rotation = -1.5708
+scale = Vector2( 10, 19.2 )
+shape = SubResource( 6 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
