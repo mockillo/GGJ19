@@ -1,19 +1,17 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Dungeon/TileSets/DungeonTilesBG.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Dungeon/TileSets/DungeonFloorTiles.tres" type="TileSet" id=2]
 [ext_resource path="res://Scenes/Characters/Joe.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Sprites/Misc/desk.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Misc/Desk.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Sprites/Misc/HomeSign.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Misc/Torch.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Sprites/Misc/shackle_WallMount.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Sprites/Misc/shackle_Down.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Sprites/Misc/shackle_Hanging.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Sprites/Misc/chair.png" type="Texture" id=10]
-
-[sub_resource type="RectangleShape2D" id=1]
-
-extents = Vector2( 63.9896, 6.94839 )
+[ext_resource path="res://Assets/Sprites/Dungeon/tiles_hole.png" type="Texture" id=11]
+[ext_resource path="res://Scenes/Dungeon/TileSets/OutsideTiles.tres" type="TileSet" id=12]
 
 [node name="Node2D" type="Node2D"]
 
@@ -22,7 +20,7 @@ z_index = -50
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 128, 128 )
 format = 1
-tile_data = PoolIntArray( 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 7, 0, 3, 7, 0, 4, 7, 0, 5, 0, 0, 6, 0, 0, 7, 4, 0, 8, 0, 0, 9, 0, 0, 131071, 0, 0, 65536, 5, 0, 65537, 0, 0, 65538, 0, 0, 65539, 8, 0, 65540, 8, 0, 65541, 8, 0, 65542, 8, 0, 65543, 8, 0, 65544, 0, 0, 65545, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 5, 0, 131074, 0, 0, 131075, 0, 0, 131076, 5, 0, 131077, 5, 0, 131078, 5, 0, 131079, 5, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 262143, 3, 0, 196608, 3, 0, 196609, 3, 0, 196610, 3, 0, 196611, 3, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0 )
+tile_data = PoolIntArray( 65535, 0, 0, 0, 0, 0, 4, 7, 0, 5, 0, 0, 6, 0, 0, 7, 4, 0, 8, 0, 0, 9, 0, 0, 131071, 0, 0, 65536, 5, 0, 65540, 8, 0, 65541, 8, 0, 65542, 8, 0, 65543, 8, 0, 65544, 0, 0, 65545, 0, 0, 196607, 0, 0, 131072, 0, 0, 131076, 5, 0, 131077, 5, 0, 131078, 5, 0, 131079, 5, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 262143, 3, 0, 196608, 3, 0, 196609, 3, 0, 196610, 3, 0, 196611, 3, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -35,17 +33,7 @@ position = Vector2( 320, 150 )
 z_index = 20
 z_as_relative = false
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
-position = Vector2( 780, 450 )
-z_index = -5
-
-[node name="desk" type="Sprite" parent="KinematicBody2D"]
-texture = ExtResource( 4 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( 0, 14.8915 )
-shape = SubResource( 1 )
-one_way_collision = true
+[node name="Desk" parent="." instance=ExtResource( 4 )]
 
 [node name="HomeSign2" type="Sprite" parent="."]
 position = Vector2( 630, 452 )
@@ -95,4 +83,16 @@ texture = ExtResource( 9 )
 position = Vector2( 790, 450 )
 z_index = -5
 texture = ExtResource( 10 )
+
+[node name="tiles_hole" type="Sprite" parent="."]
+position = Vector2( 320, 192 )
+texture = ExtResource( 11 )
+
+[node name="Outside" type="TileMap" parent="."]
+scale = Vector2( 0.5, 0.5 )
+z_index = -111
+tile_set = ExtResource( 12 )
+cell_size = Vector2( 128, 128 )
+format = 1
+tile_data = PoolIntArray( -131063, 7, 0, -65528, 7, 0, 65535, 7, 0, 0, 7, 0, 1, 7, 0, 2, 8, 0, 3, 7, 0, 4, 1, 0, 6, 7, 0, 7, 7, 0, 65536, 7, 0, 65537, 7, 0, 65538, 7, 0, 65539, 3, 0, 65540, 4, 0, 65541, 7, 0, 131072, 4, 0, 131073, 2, 0, 131074, 7, 0, 131075, 7, 0, 131076, 7, 0, 131077, 7, 0, 196611, 7, 0, 196612, 7, 0, 196613, 7, 0, 196614, 7, 0, 196615, 7, 0, 196616, 7, 0, 262147, 7, 0, 262148, 7, 0, 262149, 7, 0, 262150, 7, 0, 262151, 7, 0, 262152, 7, 0, 327683, 7, 0, 327684, 7, 0, 327685, 7, 0, 327686, 7, 0, 327687, 7, 0, 393219, 7, 0, 393220, 7, 0, 393221, 7, 0, 393222, 7, 0, 393223, 7, 0 )
 
