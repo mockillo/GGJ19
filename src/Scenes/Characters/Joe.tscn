@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scripts/Characters/Joe.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Joe/character_Hips.png" type="Texture" id=2]
@@ -12,6 +12,11 @@
 [ext_resource path="res://Assets/Sprites/Joe/character_Upper Left Arm.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Sprites/Joe/character_Lower Left Arm.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Sprites/Joe/character_Head.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Sprites/HealthBar/healthBar_BG.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Sprites/HealthBar/healthBar_Frame.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Sprites/HealthBar/healthBar_Health.png" type="Texture" id=15]
+[ext_resource path="res://Scripts/Characters/HealthBar.gd" type="Script" id=16]
+[ext_resource path="res://Assets/Sound/On Hit_1.wav" type="AudioStream" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -456,5 +461,19 @@ editor_draw_limits = true
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource( 7 )
+
+[node name="HealthBar" type="TextureProgress" parent="."]
+margin_left = -65.0
+margin_top = -151.0
+margin_right = 63.0
+margin_bottom = -23.0
+value = 100.0
+texture_under = ExtResource( 13 )
+texture_over = ExtResource( 14 )
+texture_progress = ExtResource( 15 )
+script = ExtResource( 16 )
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 17 )
 
 [connection signal="body_entered" from="character_Torso/character_Upper Left Arm/character_Lower Left Arm/Area2D" to="." method="melee_hit"]
