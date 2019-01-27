@@ -8,9 +8,6 @@ var weapons = [
 	"res://Scenes/Weapons/CD.tscn",
 	]
 
-func _process(delta):
-	print($DeathTimer.time_left)
-
 #warning-ignore:unused_argument
 func move(delta):
 	move_and_slide(velocity, Vector2(0,-1))
@@ -59,10 +56,6 @@ func spawnRanged():
 	weapon.position.y -= 70.0
 	weapon.set_dir(-1 if is_flipped else 1)
 	get_parent().add_child(weapon)
-	
-func loadLevel():
-	print("DeathTimer: timeout")
-	get_tree().change_scene("res://Scenes/Level/Level1.tscn")
 	
 	
 
