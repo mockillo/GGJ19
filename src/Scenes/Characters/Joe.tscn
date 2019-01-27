@@ -12,9 +12,9 @@
 [ext_resource path="res://Assets/Sprites/Joe/character_Upper Left Arm.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Sprites/Joe/character_Lower Left Arm.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Sprites/Joe/character_Head.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Sprites/HealthBar/healthBar_BG.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Sprites/HealthBar/healthBar_Frame.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Sprites/HealthBar/healthBar_Health.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Sprites/Misc/prog_Under.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Sprites/Misc/prog_Frame.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Sprites/Misc/prog_Progress.png" type="Texture" id=15]
 [ext_resource path="res://Scripts/Characters/HealthBar.gd" type="Script" id=16]
 [ext_resource path="res://Assets/Sound/On Hit_1.wav" type="AudioStream" id=17]
 
@@ -467,7 +467,7 @@ margin_left = -65.0
 margin_top = -151.0
 margin_right = 63.0
 margin_bottom = -23.0
-value = 100.0
+value = 50.0
 texture_under = ExtResource( 13 )
 texture_over = ExtResource( 14 )
 texture_progress = ExtResource( 15 )
