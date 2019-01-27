@@ -56,4 +56,6 @@ func spawnRanged():
 	weapon.position.y -= 70.0
 	weapon.set_dir(-1 if is_flipped else 1)
 	get_parent().add_child(weapon)
+	
+	
 

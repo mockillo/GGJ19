@@ -28,6 +28,7 @@ func attack():
 	
 func take_damage(amount):
 	health -= amount
+	$HealthBar.update_health(health)
 	if health<1:
 		print ("YOU ARE DEAD, "+self.name)
 		if self.get_name() == "Joe":
@@ -40,6 +41,6 @@ func melee_hit(body:BaseCharacter):
 	if body != self:
 		body.take_damage(10)
 		
-		
+
 		
 		
