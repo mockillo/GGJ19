@@ -14,3 +14,6 @@ func _ready():
 func update_health(health):
 	value = health
 	
+func flip():
+	rect_scale.x *= -1
+	

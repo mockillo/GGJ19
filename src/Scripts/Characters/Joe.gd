@@ -26,12 +26,14 @@ func move(delta):
 		velocity.x = -WALK_SPEED
 		if (not is_flipped): 
 			apply_scale(Vector2(-1, 1))
+			$HealthBar.flip()
 			is_flipped = true
 			
 	elif Input.is_action_pressed("ui_right"):
 		velocity.x = WALK_SPEED
 		if (is_flipped):
 			apply_scale(Vector2(-1, 1))
+			$HealthBar.flip()
 			is_flipped = false
 			
 	else:
