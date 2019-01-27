@@ -16,22 +16,26 @@ func move(delta):
 			velocity.x = -WALK_SPEED/2
 			if position.x < init_pos-128:
 				apply_scale(Vector2(-1, 1))
+				$HealthBar.flip()
 				is_flipped = false
 		else:
 			velocity.x = WALK_SPEED/2
 			if position.x > init_pos+128:
 				apply_scale(Vector2(-1, 1))
+				$HealthBar.flip()
 				is_flipped = true
 	else:
 		if joe.position.x < position.x:
 			velocity.x = -WALK_SPEED
 			if !is_flipped:
 				apply_scale(Vector2(-1, 1))
+				$HealthBar.flip()
 				is_flipped = true
 		else:
 			velocity.x = WALK_SPEED
 			if is_flipped:
 				apply_scale(Vector2(-1, 1))
+				$HealthBar.flip()
 				is_flipped = false
 
 	if (is_on_floor()):
