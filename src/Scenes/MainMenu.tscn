@@ -25,30 +25,36 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 640.0
+margin_left = 630.0
 margin_top = 360.0
-margin_right = 1280.0
+margin_right = 1279.0
 margin_bottom = 720.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_right = 640.0
-margin_bottom = 163.0
+margin_right = 649.0
+margin_bottom = 80.0
 custom_fonts/font = ExtResource( 3 )
-text = "WORK IS DULL!
-I WANT TO GO HOME!"
+text = "Struggle for home!"
 align = 1
 
+[node name="Label2" type="Label" parent="VBoxContainer"]
+margin_top = 84.0
+margin_right = 649.0
+margin_bottom = 117.0
+custom_fonts/font = ExtResource( 4 )
+text = "Joe wants to leave work (his dungeon), help him!"
+
 [node name="Play" type="Button" parent="VBoxContainer"]
-margin_top = 167.0
-margin_right = 640.0
-margin_bottom = 206.0
+margin_top = 121.0
+margin_right = 649.0
+margin_bottom = 160.0
 custom_fonts/font = ExtResource( 4 )
 text = "PLAY"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
-margin_top = 210.0
-margin_right = 640.0
-margin_bottom = 249.0
+margin_top = 164.0
+margin_right = 649.0
+margin_bottom = 203.0
 custom_fonts/font = ExtResource( 4 )
 text = "quit"
 
