@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Fonts/KenPixel Mini Large.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scenes/Misc/Desk.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Sprites/Misc/chair.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Conditions/Timer.gd" type="Script" id=4]
+
+[node name="root" type="Node2D"]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 1922.0
+margin_bottom = 565.0
+
+[node name="Label" type="Label" parent="."]
+margin_left = 385.0
+margin_top = 159.0
+margin_right = 1537.0
+margin_bottom = 405.0
+custom_fonts/font = ExtResource( 1 )
+text = "You didn't make it out of the office
+And have now been forced to work
+over time!"
+align = 1
+
+[node name="Desk" parent="." instance=ExtResource( 2 )]
+position = Vector2( 975, 543 )
+
+[node name="chair" type="Sprite" parent="Desk"]
+position = Vector2( -59, 8 )
+texture = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+script = ExtResource( 4 )
+
+[connection signal="timeout" from="Timer" to="Timer" method="start_level"]

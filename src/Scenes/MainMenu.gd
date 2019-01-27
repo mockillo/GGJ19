@@ -27,10 +27,6 @@ func _process(delta):
 		current_btn += 1
 	elif (Input.is_action_pressed("ui_down") && current_btn > 0):
 		current_btn -= 1
-		
-	print(btns)
-	print(current_btn)
-	print(btns[current_btn])	
 	
 	btns[current_btn].grab_focus()
 	

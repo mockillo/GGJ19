@@ -33,7 +33,7 @@ func take_damage(amount):
 	if health<1:
 		print ("YOU ARE DEAD, "+self.name)
 		if self.get_name() == "Joe":
-			get_tree().change_scene("res://Scenes/MainMenu.tscn")
+			get_tree().change_scene("res://Scenes/Conditions/Failed.tscn")
 		else:
 			get_tree().get_current_scene().remove_child(self)
 		
